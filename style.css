@@ -2,73 +2,126 @@
     --calc-bg: #0a0a0a;
     --calc-surface: #171717;
     --calc-display: #262626;
+    --calc-border: #ffffff1a;
+
     --calc-radius: 3rem;
     --calc-radius-sm: 1.5rem;
+
+    --text: #fafafa;
+
     --btn-transition: background 120ms ease, transform 80ms ease;
 
     --btn-light: #525252;
     --btn-light-hover: #737373;
-    --btn-orange: #f97316;
-    --btn-orange-hover: #fb923c;
+
     --btn-dark: #262626;
     --btn-dark-hover: #404040;
+
+    --btn-orange: #f97316;
+    --btn-orange-hover: #fb923c;
+    --btn-orange-text: #fafafa;
+
+    --toggle-bg: #171717;
+    --toggle-bg-hover: #262626;
+    --toggle-icon: #fafafa;
 }
 
-*, *::before, *::after {
+body.light-theme {
+    --calc-bg: #fafafa;
+    --calc-surface: #f5f5f5;
+    --calc-display: #e5e5e5;
+    --calc-border: #00000014;
+
+    --text: #0a0a0a;
+
+    --btn-light: #d4d4d4;
+    --btn-light-hover: #e5e5e5;
+
+    --btn-dark: #f5f5f5;
+    --btn-dark-hover: #e5e5e5;
+
+    --btn-orange: #f97316;
+    --btn-orange-hover: #fb923c;
+    --btn-orange-text: #fafafa;
+
+    --toggle-bg: #f5f5f5;
+    --toggle-bg-hover: #e5e5e5;
+    --toggle-icon: #525252;
+}
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 300;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     min-height: 100vh;
+
     background: var(--calc-bg);
-    color: #fafafa;
+    color: var(--text);
 }
 
 .calculator {
     width: min(28rem, 100vw);
+
     display: flex;
     flex-direction: column;
+
     padding: 1.125rem;
-    border: 1px solid #fafafa20;
+
+    border: 1px solid var(--calc-border);
     border-radius: var(--calc-radius);
+
     background: var(--calc-surface);
 }
 
 .dark-mode-container {
     display: flex;
     align-items: center;
+
     width: fit-content;
     padding: 0.875rem;
-    background: transparent;
-    border-radius: 100%;
-    background: #171717;
+
+    border-radius: 999px;
+
+    background: var(--toggle-bg);
+
     box-shadow:
-        inset 0 1px 2px #ffffff20,
+        inset 0 1px 2px #ffffff1a,
         0 2px 4px #00000025,
         0 4px 8px #00000015;
+
     margin-bottom: 1rem;
+
+    transition: var(--btn-transition);
 }
 
 .dark-mode-container:hover {
-    background: #262626;
+    background: var(--toggle-bg-hover);
 }
 
 .hgi {
-    color: #f5f5f5;
     font-size: 1.125rem;
+    color: var(--toggle-icon);
+
     cursor: pointer;
+
     transition: var(--btn-transition);
 }
 
 .hgi:hover {
-    color: #e5e5e5;
+    transform: scale(1.08);
+    opacity: 0.85;
 }
 
 .hgi:active {
@@ -83,7 +136,24 @@ section {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
+
     font-size: 2.5rem;
+}
+
+#output {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    gap: 1rem;
+    flex: 1;
+
+    padding: 1rem;
+
+    background: var(--calc-display);
+    border: 1px solid var(--calc-border);
+    border-radius: var(--calc-radius-sm);
 }
 
 #expression {
@@ -94,30 +164,25 @@ section {
     padding-top: 1rem;
 }
 
-#output {
-    background: var(--calc-display);
-    border-radius: var(--calc-radius-sm);
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 1rem;
-    gap: 1rem;
-    flex: 1;
-}
-
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.875rem;
+
     height: 4rem;
     flex-basis: calc(25% - 0.75rem);
     margin: 0.375rem;
+
+    font-size: 1.875rem;
+
     border: none;
     border-radius: var(--calc-radius-sm);
-    color: #fafafa;
+
+    color: var(--text);
     cursor: pointer;
+
     transition: var(--btn-transition);
+
     box-shadow:
         inset 0 1px 1px #ffffff20,
         0 1px 3px #00000025,
@@ -136,14 +201,6 @@ section {
     background: var(--btn-light-hover);
 }
 
-.orange {
-    background: var(--btn-orange);
-}
-
-.orange:hover {
-    background: var(--btn-orange-hover);
-}
-
 .dark {
     background: var(--btn-dark);
 }
@@ -152,10 +209,20 @@ section {
     background: var(--btn-dark-hover);
 }
 
-.light:focus, .orange:focus, .dark:focus {
-    outline: none;
+.orange {
+    background: var(--btn-orange);
+    color: var(--btn-orange-text);
 }
 
+.orange:hover {
+    background: var(--btn-orange-hover);
+}
+
+.light:focus,
+.dark:focus,
+.orange:focus {
+    outline: none;
+}
 
 @media (min-width: 1024px) {
     .calculator {
@@ -171,7 +238,6 @@ section {
         font-size: 2.2rem;
     }
 }
-
 
 @media (max-width: 600px) {
     body {
