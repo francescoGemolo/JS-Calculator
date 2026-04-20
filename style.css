@@ -1,3 +1,19 @@
+:root {
+    --calc-bg: #0a0a0a;
+    --calc-surface: #171717;
+    --calc-display: #262626;
+    --calc-radius: 3rem;
+    --calc-radius-sm: 1.5rem;
+    --btn-transition: background 120ms ease, transform 80ms ease;
+
+    --btn-light: #94a3b8;
+    --btn-light-hover: #cbd5e1;
+    --btn-orange: #f97316;
+    --btn-orange-hover: #fb923c;
+    --btn-dark: #262626;
+    --btn-dark-hover: #404040;
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -5,24 +21,24 @@
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 300;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #0a0a0a;
+    background: var(--calc-bg);
     color: #fafafa;
 }
 
 .calculator {
-    width: min(26.25rem, 100vw);
+    width: min(28rem, 100vw);
     display: flex;
     flex-direction: column;
     padding: 1.125rem;
-    border: none;
-    border-radius: 3rem;
-    background: #171717;
+    border: 1px solid #fafafa20;
+    border-radius: var(--calc-radius);
+    background: var(--calc-surface);
 }
 
 section {
@@ -30,7 +46,11 @@ section {
     flex-wrap: wrap;
     flex: 1;
     padding: 1rem;
-    font-size: 3rem;
+    font-size: 2.875rem;
+}
+
+#expression {
+    color: #737373;
 }
 
 #input {
@@ -38,8 +58,8 @@ section {
 }
 
 #output {
-    background: #262626;
-    border-radius: 1.5rem;
+    background: var(--calc-display);
+    border-radius: var(--calc-radius-sm);
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
@@ -56,38 +76,60 @@ section {
     flex-basis: calc(25% - 0.75rem);
     margin: 0.375rem;
     border: none;
-    border-radius: 1.5rem;
+    border-radius: var(--calc-radius-sm);
     color: #fafafa;
     cursor: pointer;
+    transition: var(--btn-transition);
     box-shadow:
         inset 0 1px 1px #ffffff20,
         0 1px 3px #00000025,
         0 4px 6px #00000015;
 }
 
-.light,
-.light:focus {
-    background: #94a3b8;
+.btn:active {
+    transform: scale(0.95);
+}
+
+.light {
+    background: var(--btn-light);
 }
 
 .light:hover {
-    background: #cbd5e1;
+    background: var(--btn-light-hover);
 }
 
-.orange,
-.orange:focus {
-    background: #f97316;
+.orange {
+    background: var(--btn-orange);
 }
 
 .orange:hover {
-    background: #fb923c;
+    background: var(--btn-orange-hover);
 }
 
-.dark,
-.dark:focus {
-    background: #262626;
+.dark {
+    background: var(--btn-dark);
 }
 
 .dark:hover {
-    background: #404040;
+    background: var(--btn-dark-hover);
+}
+
+.light:focus, .orange:focus, .dark:focus {
+    outline: 2px solid #ffffff40;
+    outline-offset: 2px;
+}
+
+@media (min-width: 1024px) {
+    .calculator {
+        width: 23rem;
+    }
+
+    .btn {
+        height: 3.2rem;
+        font-size: 1.5rem;
+    }
+
+    section {
+        font-size: 2.2rem;
+    }
 }
