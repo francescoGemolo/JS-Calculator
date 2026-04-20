@@ -85,7 +85,7 @@ body {
     background: var(--calc-surface);
 }
 
-.dark-mode-container {
+.dark-mode {
     display: flex;
     align-items: center;
 
