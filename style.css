@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('font/SF-Pro-Display-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
 :root {
     --calc-bg: #0a0a0a;
     --calc-surface: #171717;
@@ -30,7 +36,7 @@ body.light-theme {
     --calc-bg: #fafafa;
     --calc-surface: #f5f5f5;
     --calc-display: #e5e5e5;
-    --calc-border: #00000014;
+    --calc-border: #0000001a;
 
     --text: #0a0a0a;
 
@@ -39,10 +45,6 @@ body.light-theme {
 
     --btn-dark: #f5f5f5;
     --btn-dark-hover: #e5e5e5;
-
-    --btn-orange: #f97316;
-    --btn-orange-hover: #fb923c;
-    --btn-orange-text: #fafafa;
 
     --toggle-bg: #f5f5f5;
     --toggle-bg-hover: #e5e5e5;
@@ -58,7 +60,10 @@ body.light-theme {
 }
 
 body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
+
     font-weight: 300;
 
     display: flex;
@@ -91,65 +96,40 @@ body {
     align-items: center;
 }
 
-.github {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.375rem;
-
-    width: fit-content;
-    padding: 0.875rem;
-
-    border-radius: 999px;
-
-    background: var(--toggle-bg);
-
-    box-shadow:
-        inset 0 1px 2px #ffffff1a,
-        0 2px 4px #00000025,
-        0 4px 8px #00000015;
-
-    margin-bottom: 1rem;
-}
-
+.github,
 .dark-mode {
+    width: 3rem;
+    height: 3rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: fit-content;
     padding: 0.875rem;
 
     border-radius: 999px;
 
     background: var(--toggle-bg);
-
     box-shadow:
         inset 0 1px 2px #ffffff1a,
         0 2px 4px #00000025,
         0 4px 8px #00000015;
 
     margin-bottom: 1rem;
+    cursor: pointer;
 
     transition: var(--btn-transition);
 }
 
-.dark-mode-container:hover {
+.github:hover,
+.dark-mode:hover {
     background: var(--toggle-bg-hover);
 }
 
 .hgi {
     font-size: 1.125rem;
     color: var(--toggle-icon);
-
-    cursor: pointer;
-
     transition: var(--btn-transition);
-}
-
-.hgi:hover {
-    transform: scale(1.08);
-    opacity: 0.85;
 }
 
 .hgi:active {
@@ -193,6 +173,8 @@ section {
 }
 
 .btn {
+    font-family: inherit;
+
     display: flex;
     justify-content: center;
     align-items: center;
