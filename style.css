@@ -30,6 +30,8 @@
     --toggle-bg: #171717;
     --toggle-bg-hover: #262626;
     --toggle-icon: #fafafa;
+
+    --result-color: #fafafa;
 }
 
 body.light-theme {
@@ -40,8 +42,8 @@ body.light-theme {
 
     --text: #0c4a6e;
 
-    --btn-light: #bae6fd;
-    --btn-light-hover: #7dd3fc;
+    --btn-light: #7dd3fc;
+    --btn-light-hover: #bae6fd;
 
     --btn-dark: #e0f2fe;
     --btn-dark-hover: #f0f9ff;
@@ -49,9 +51,11 @@ body.light-theme {
     --btn-orange: #3b82f6;
     --btn-orange-hover: #60a5fa;
 
-    --toggle-bg: #e0f2fe;
-    --toggle-bg-hover: #bae6fd;
+    --toggle-bg: #f0f9ff;
+    --toggle-bg-hover: #e0f2fe;
     --toggle-icon: #0369a1;
+
+    --result-color: #0c4a6e;
 }
 
 *,
@@ -152,23 +156,39 @@ section {
 }
 
 #output {
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-end;
-
-    gap: 1rem;
     flex: 1;
 
+    min-height: 8rem;
+
     padding: 1rem;
+    gap: 1rem;
 
     background: var(--calc-display);
     border: 1px solid var(--calc-border);
     border-radius: var(--calc-radius-sm);
+
+    overflow: hidden;
 }
 
 #expression {
     color: #737373;
+}
+
+#result {
+    color: var(--result-color);
+}
+
+#expression, #result {
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
 }
 
 #input {
@@ -186,7 +206,7 @@ section {
     flex-basis: calc(25% - 0.75rem);
     margin: 0.375rem;
 
-    font-size: 1.875rem;
+    font-size: 2rem;
 
     border: none;
     border-radius: var(--calc-radius-sm);
