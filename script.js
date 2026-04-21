@@ -57,6 +57,13 @@ function addValue(value) {
 function updateDisplay(expression, result) {
   expressionDiv.textContent = expression;
   resultDiv.textContent = result;
+
+  expressionDiv.scrollLeft = expressionDiv.scrollWidth;
+  resultDiv.scrollLeft = resultDiv.scrollWidth;
+
+  expressionDiv.style.maskImage = expressionDiv.scrollWidth > expressionDiv.clientWidth
+    ? 'linear-gradient(to right, transparent 0%, black 5%)'
+    : 'none';
 }
 
 function clear() {
