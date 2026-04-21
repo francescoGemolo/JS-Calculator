@@ -23,9 +23,9 @@
     --btn-dark: #262626;
     --btn-dark-hover: #404040;
 
-    --btn-accent: #f97316;
-    --btn-accent-hover: #fb923c;
-    --btn-accent-text: #fafafa;
+    --btn-primary: #f97316;
+    --btn-primary-hover: #fb923c;
+    --btn-primary-text: #fafafa;
 
     --toggle-bg: #171717;
     --toggle-bg-hover: #262626;
@@ -49,8 +49,8 @@ body.light-theme {
     --btn-dark: #e0f2fe;
     --btn-dark-hover: #f0f9ff;
 
-    --btn-accent: #3b82f6;
-    --btn-accent-hover: #60a5fa;
+    --btn-primary: #3b82f6;
+    --btn-primary-hover: #60a5fa;
 
     --toggle-bg: #f0f9ff;
     --toggle-bg-hover: #e0f2fe;
@@ -85,6 +85,32 @@ body {
     color: var(--text);
 }
 
+.authors-header {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+#author-left {
+    margin: 0;
+    width: fit-content;
+}
+
+#author-right {
+    margin: 0;
+    width: fit-content;
+    text-align: right;
+}
+
+p span {
+    text-decoration: underline;
+}
+
 .calculator {
     width: min(28rem, 100vw);
 
@@ -100,7 +126,7 @@ body {
     overflow: hidden;
 }
 
-.header {
+.calculator-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -264,38 +290,19 @@ section {
     background: var(--btn-dark-hover);
 }
 
-.accent {
-    background: var(--btn-accent);
-    color: var(--btn-accent-text);
+.primary {
+    background: var(--btn-primary);
+    color: var(--btn-primary-text);
 }
 
-.accent:hover {
-    background: var(--btn-accent-hover);
+.primary:hover {
+    background: var(--btn-primary-hover);
 }
 
 .light:focus,
 .dark:focus,
-.accent:focus {
+.primary:focus {
     outline: none;
-}
-
-#author-left {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    width: fit-content;
-}
-
-#author-right {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    width: fit-content;
-    text-align: right;
-}
-
-p span {
-    text-decoration: underline;
 }
 
 @media (min-width: 1024px) {
