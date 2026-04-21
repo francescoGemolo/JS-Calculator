@@ -72,4 +72,8 @@ function isLastCharOperator() {
   return isNaN(parseInt(expression.slice(-1)));
 }
 
+function startFromResult(value) {
+  expression += result + value;
+}
+
 inputBox.addEventListener("click", buttonClick);
