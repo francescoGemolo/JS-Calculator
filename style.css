@@ -279,6 +279,25 @@ section {
     outline: none;
 }
 
+#author-left {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: fit-content;
+}
+
+#author-right {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: fit-content;
+    text-align: right;
+}
+
+p span {
+    text-decoration: underline;
+}
+
 @media (min-width: 1024px) {
     .calculator {
         width: 23rem;
