@@ -31,6 +31,7 @@
     --toggle-bg-hover: #262626;
     --toggle-icon: #fafafa;
 
+    --expression-color: #f5f5f5;
     --result-color: #fafafa;
 }
 
@@ -40,7 +41,7 @@ body.light-theme {
     --calc-display: #e0f2fe;
     --calc-border: #00000020;
 
-    --text: #0c4a6e;
+    --text: #082f49;
 
     --btn-light: #7dd3fc;
     --btn-light-hover: #bae6fd;
@@ -55,7 +56,8 @@ body.light-theme {
     --toggle-bg-hover: #e0f2fe;
     --toggle-icon: #0369a1;
 
-    --result-color: #0c4a6e;
+    --expression-color: #0369a1;
+    --result-color: #082f49;
 }
 
 *,
@@ -183,7 +185,7 @@ section {
 }
 
 #expression {
-    color: #737373;
+    color: var(--expression-color);
 }
 
 #result {
