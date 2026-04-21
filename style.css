@@ -8,7 +8,7 @@
     --calc-bg: #0a0a0a;
     --calc-surface: #171717;
     --calc-display: #262626;
-    --calc-border: #ffffff1a;
+    --calc-border: #ffffff20;
 
     --calc-radius: 3rem;
     --calc-radius-sm: 1.5rem;
@@ -33,22 +33,25 @@
 }
 
 body.light-theme {
-    --calc-bg: #fafafa;
-    --calc-surface: #f5f5f5;
-    --calc-display: #e5e5e5;
-    --calc-border: #0000001a;
+    --calc-bg: #e4e4e7;
+    --calc-surface: #f0f9ff;
+    --calc-display: #e0f2fe;
+    --calc-border: #00000020;
 
-    --text: #0a0a0a;
+    --text: #0c4a6e;
 
-    --btn-light: #d4d4d4;
-    --btn-light-hover: #e5e5e5;
+    --btn-light: #7dd3fc;
+    --btn-light-hover: #bae6fd;
 
-    --btn-dark: #f5f5f5;
-    --btn-dark-hover: #e5e5e5;
+    --btn-dark: #e0f2fe;
+    --btn-dark-hover: #f0f9ff;
 
-    --toggle-bg: #f5f5f5;
-    --toggle-bg-hover: #e5e5e5;
-    --toggle-icon: #525252;
+    --btn-orange: #3b82f6;
+    --btn-orange-hover: #60a5fa;
+
+    --toggle-bg: #e0f2fe;
+    --toggle-bg-hover: #bae6fd;
+    --toggle-icon: #0369a1;
 }
 
 *,
