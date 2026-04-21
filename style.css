@@ -40,8 +40,8 @@ body.light-theme {
 
     --text: #0c4a6e;
 
-    --btn-light: #7dd3fc;
-    --btn-light-hover: #bae6fd;
+    --btn-light: #bae6fd;
+    --btn-light-hover: #7dd3fc;
 
     --btn-dark: #e0f2fe;
     --btn-dark-hover: #f0f9ff;
