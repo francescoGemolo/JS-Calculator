@@ -44,19 +44,21 @@
         0 6px 10px #00000015;
 
     /* Animation */
-    --transition: background 120ms ease, transform 80ms ease;
-
+    --transition:
+        background 0.30s ease,
+        transform 0.20s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.25s ease;
 }
 
 body.light-theme {
     /* Colors */
-    --bg: #e4e4e7;
-    --surface: #f0f9ff;
-    --display: #e0f2fe;
+    --bg: oklch(90% 0 280);
+    --surface: oklch(97% 0 240);
+    --display: oklch(95% 0 240);
+
+    --text: oklch(30% 0 240);
 
     --border: #00000020;
-
-    --text: #082f49;
 
     /* Buttons */
     --light: #7dd3fc;
@@ -87,7 +89,10 @@ body.light-theme {
         0 6px 10px #00000015;
 
     /* Animation */
-    --transition: background 120ms ease, transform 80ms ease;
+    --transition:
+        background 160ms ease,
+        transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 160ms ease;
 }
 
 *,
@@ -223,6 +228,22 @@ section {
     color: var(--text);
 }
 
+@keyframes pop {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#result.animate {
+    animation: pop 120ms ease;
+}
+
 #expression,
 #result {
     width: 100%;
@@ -263,8 +284,14 @@ section {
     box-shadow: var(--shadow-s);
 }
 
+.btn:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: var(--shadow-s);
+}
+
 .btn:active {
-    transform: scale(0.95);
+    transform: scale(0.90);
+    box-shadow: var(--shadow-s);
 }
 
 .light {

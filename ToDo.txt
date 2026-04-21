@@ -9,36 +9,3 @@ function updateDisplay(expression, result) {
         ? 'linear-gradient(to right, transparent 0%, black 5%)'
         : 'none';
 }
-
-(Dark)
---primary: oklch(0.70 0.19 48);
-
---bg-dark: oklch(0.1 0 264);
---bg: oklch(0.2 0 264);
---bg-light: oklch(0.3 0 264);
-
---text: oklch(0.96 0 264);
---text-muted: oklch(0.76 0 264);
-
-(Light)
---primary: oklch(0.65 0.15 264);
-
---bg-dark: oklch(0.92 0 264);
---bg: oklch(0.96 0 264);
---bg-light: oklch(1 0 264);
-
---text: oklch(0.15 0 264);
---text-muted: oklch(0.4 0 264);
-
-(Shadow)
---shadow-s: inset 0 1px 2px #ffffff30,
-0 1px 2px #00000030,
-0 2px 4px #00000015;
-
---shadow-m: inset 0 1px 2px #ffffff50,
-0 2px 4px #00000030,
-0 4px 8px #00000015;
-
---shadow-l: inset 0 1px 2px #ffffff70,
-0 4px 6px #00000030,
-0 6px 10px #00000015;
