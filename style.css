@@ -23,9 +23,9 @@
     --btn-dark: #262626;
     --btn-dark-hover: #404040;
 
-    --btn-orange: #f97316;
-    --btn-orange-hover: #fb923c;
-    --btn-orange-text: #fafafa;
+    --btn-accent: #f97316;
+    --btn-accent-hover: #fb923c;
+    --btn-accent-text: #fafafa;
 
     --toggle-bg: #171717;
     --toggle-bg-hover: #262626;
@@ -49,12 +49,12 @@ body.light-theme {
     --btn-dark: #e0f2fe;
     --btn-dark-hover: #f0f9ff;
 
-    --btn-orange: #3b82f6;
-    --btn-orange-hover: #60a5fa;
+    --btn-accent: #3b82f6;
+    --btn-accent-hover: #60a5fa;
 
     --toggle-bg: #f0f9ff;
     --toggle-bg-hover: #e0f2fe;
-    --toggle-icon: #0369a1;
+    --toggle-icon: #082f49;
 }
 
 *,
@@ -264,18 +264,18 @@ section {
     background: var(--btn-dark-hover);
 }
 
-.orange {
-    background: var(--btn-orange);
-    color: var(--btn-orange-text);
+.accent {
+    background: var(--btn-accent);
+    color: var(--btn-accent-text);
 }
 
-.orange:hover {
-    background: var(--btn-orange-hover);
+.accent:hover {
+    background: var(--btn-accent-hover);
 }
 
 .light:focus,
 .dark:focus,
-.orange:focus {
+.accent:focus {
     outline: none;
 }
 

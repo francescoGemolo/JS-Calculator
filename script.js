@@ -1,4 +1,4 @@
-// Dark Mode
+// Dark Mode (Do not delete this!)
 const container = document.querySelector('.dark-mode');
 const iconOn = document.querySelector('.hgi-idea');
 const iconOff = document.querySelector('.hgi-lightbulb-off');
@@ -31,6 +31,22 @@ function buttonClick(event) {
             addValue(value);
             break;
         case 'clear':
+            clear();
+            break;
+        case 'backspace':
+            backspace();
+            break;
+
+        case 'addition':
+        case 'subtraction':
+        case 'multiplication':
+        case 'division':
+            if (expression === '' && result !== '') {
+                startFromResult(value);
+            }
+            else if (expression !== '' && !isLastCharOperator()) {
+                addValue(value);
+            }
             break;
     }
 
@@ -54,4 +70,21 @@ function updateDisplay(expression, result) {
     expressionDiv.style.maskImage = expressionDiv.scrollWidth > expressionDiv.clientWidth
         ? 'linear-gradient(to right, transparent 0%, black 5%)'
         : 'none';
+}
+
+function clear() {
+    expression = '';
+    result = '';
+}
+
+function backspace() {
+    expression = expression.slice(0, -1);
+}
+
+function isLastCharOperator() {
+    return isNaN(parseInt(expression.slice(-1)));
+}
+
+function startFromResult(value) {
+    expression += result + value;
 }
