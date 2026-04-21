@@ -37,7 +37,7 @@ function buttonClick(event) {
       break;
 
     case "addition":
-    case "substraction":
+    case "subtraction":
     case "multiplication":
     case "division":
       if (expression === "" && result !== "") {
