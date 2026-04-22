@@ -209,39 +209,37 @@ section {
     display: flex;
     flex: 1;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-end;
-    min-height: 8rem;
+
+    height: 9rem;
+    min-height: 9rem;
+    max-height: 9rem;
+
     min-width: 0;
     padding: 1rem;
-    gap: 1rem;
     background: var(--display);
     border: 1px solid var(--border);
     border-radius: 1.5rem;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 #expression {
     color: var(--text);
+    font-size: 3rem;
 }
 
 #result {
     color: var(--text);
+    opacity: 0.6;
+    font-size: 1.5rem;
 }
 
-@keyframes pop {
-    0% {
-        transform: scale(0.95);
-        opacity: 0.6;
-    }
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-#result.animate {
-    animation: pop 120ms ease;
+.result-preview {
+    font-size: 1.2rem !important;
+    opacity: 0.7 !important;
 }
 
 #expression,
@@ -291,6 +289,7 @@ section {
 
 .btn:active {
     transform: scale(0.90);
+    filter: brightness(1);
     box-shadow: var(--shadow-s);
 }
 

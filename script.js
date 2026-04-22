@@ -89,16 +89,30 @@ function addValue(value) {
 }
 
 function updateDisplay(expression, result) {
-  expressionDiv.textContent = expression;
-  resultDiv.textContent = result;
+  if (expression === "") {
+    expressionDiv.textContent = result || "0";
+    resultDiv.textContent = "";
+
+    expressionDiv.style.opacity = "1";
+    expressionDiv.style.fontSize = "3rem";
+    expressionDiv.style.fontWeight = "300";
+  }
+  else {
+    expressionDiv.textContent = expression;
+
+    if (result !== "" && result !== "Really?") {
+      resultDiv.textContent = result;
+    } else {
+      resultDiv.textContent = "";
+    }
+
+    expressionDiv.style.fontSize = "3rem";
+    expressionDiv.style.opacity = "1";
+    expressionDiv.style.fontWeight = "300";
+    resultDiv.style.opacity = "0.4";
+  }
 
   expressionDiv.scrollLeft = expressionDiv.scrollWidth;
-  resultDiv.scrollLeft = resultDiv.scrollWidth;
-
-  expressionDiv.style.maskImage =
-    expressionDiv.scrollWidth > expressionDiv.clientWidth
-      ? "linear-gradient(to right, transparent 0%, black 5%)"
-      : "none";
 }
 
 function clear() {
