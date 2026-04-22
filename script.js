@@ -96,3 +96,37 @@ function evaluate() {
   shouldResetDisplay = true;
   updateDisplay();
 }
+
+function handleDecimal() {
+  if (shouldResetDisplay) {
+    firstNumber = "0.";
+    shouldResetDisplay = false;
+    return;
+  }
+  // Multiple decimals
+  if (!currentOperator && !firstNumber.includes(".")) firstNumber += ".";
+  else if (currentOperator && !secondNumber.includes(".")) secondNumber += ".";
+  updateDisplay();
+}
+
+function backspace() {
+  if (secondNumber) secondNumber = secondNumber.slice(0, -1);
+  else if (currentOperator) currentOperator = null;
+  else if (firstNumber) firstNumber = firstNumber.toString().slice(0, -1);
+  updateDisplay();
+}
+
+inputBox.addEventListener("click", (e) => {
+  const target = e.target;
+  if (!target.classList.contains("btn")) return;
+
+  const action = target.dataset.action;
+  const value = target.dataset.value;
+
+  if (action === "number") handleNumber(value);
+  if (["addition", "subtraction", "multiplication", "division"].includes(action)) handleOperator(value);
+  if (action === "submit") evaluate();
+  if (action === "clear") clear();
+  if (action === "decimal") handleDecimal();
+  if (action === "backspace") backspace();
+});
