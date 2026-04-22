@@ -40,6 +40,7 @@ function buttonClick(event) {
     case "subtraction":
     case "multiplication":
     case "division":
+      if (expression === "" && result === "really?") break;
       if (expression === "" && result !== "") {
         startFromResult(value);
       } else if (expression !== "" && !isLastCharOperator()) {
@@ -123,6 +124,9 @@ function submit() {
 }
 
 function evaluateExpression() {
+  if (expression.includes("/0")) {
+    return "really?";
+  }
   const evalResult = eval(expression);
   return isNaN(evalResult) || !isFinite(evalResult)
     ? " "
