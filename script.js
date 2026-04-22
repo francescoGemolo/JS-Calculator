@@ -45,6 +45,10 @@ function buttonClick(event) {
       } else if (expression !== "" && !isLastCharOperator()) {
         addValue(value);
       }
+      break;
+    case "submit":
+      submit();
+      break;
   }
 
   updateDisplay(expression, result);
@@ -82,6 +86,20 @@ function isLastCharOperator() {
 
 function startFromResult(value) {
   expression += result + value;
+}
+
+function submit() {
+  result = evaluateExpression();
+  expression = "";
+}
+
+function evaluateExpression() {
+  const evalResult = eval(expression);
+  return isNaN(evalResult) || !isFinite(evalResult)
+    ? " "
+    : evalResult < 1
+      ? parseFloat(evalResult.toFixed(10))
+      : parseFloat(evalResult.toFixed(2));
 }
 
 inputBox.addEventListener("click", buttonClick);
