@@ -40,7 +40,7 @@ function updateDisplay() {
   expressionDiv.textContent = firstNumber;
   if (currentOperator) expressionDiv.textContent += ` ${currentOperator}`;
   if (secondNumber) expressionDiv.textContent += ` ${secondNumber}`;
-  
+
   // Scroll to end for long expressions
   expressionDiv.scrollLeft = expressionDiv.scrollWidth;
 }
@@ -62,5 +62,37 @@ function handleNumber(num) {
   } else {
     secondNumber += num;
   }
+  updateDisplay();
+}
+
+function handleOperator(op) {
+  if (firstNumber && currentOperator && secondNumber) {
+    evaluate();
+  }
+
+  if (firstNumber !== "") {
+    currentOperator = op;
+    shouldResetDisplay = false;
+    updateDisplay();
+  }
+}
+
+function evaluate() {
+  if (!firstNumber || !currentOperator || !secondNumber) return;
+
+  const solution = operate(currentOperator, firstNumber, secondNumber);
+
+  if (solution === "Really?") {
+    resultDiv.textContent = solution;
+    firstNumber = "";
+  } else {
+    // Round decimals (Assignment step f.c)
+    firstNumber = Math.round(solution * 1000) / 1000;
+    resultDiv.textContent = firstNumber;
+  }
+
+  secondNumber = "";
+  currentOperator = null;
+  shouldResetDisplay = true;
   updateDisplay();
 }
