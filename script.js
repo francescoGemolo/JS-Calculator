@@ -130,3 +130,12 @@ inputBox.addEventListener("click", (e) => {
   if (action === "decimal") handleDecimal();
   if (action === "backspace") backspace();
 });
+
+document.addEventListener("keydown", (e) => {
+  if (e.key >= 0 && e.key <= 9) handleNumber(e.key);
+  if (["+", "-", "*", "/"].includes(e.key)) handleOperator(e.key);
+  if (e.key === "Enter" || e.key === "=") evaluate();
+  if (e.key === "Backspace") backspace();
+  if (e.key === "Escape") clear();
+  if (e.key === "." || e.key === ",") handleDecimal();
+});
