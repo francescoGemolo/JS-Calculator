@@ -22,7 +22,7 @@ const inputBox = document.getElementById("input");
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => (b === 0 ? "Really?" : a / b);
+const divide = (a, b) => (b === 0 ? "Nice try, Einstein" : a / b);
 
 function operate(operator, a, b) {
   a = Number(a);
@@ -84,7 +84,7 @@ function evaluate() {
 
   const solution = operate(currentOperator, firstNumber, secondNumber);
 
-  if (solution === "Really?") {
+  if (solution === "Nice try, Einstein") {
     resultDiv.textContent = solution;
     firstNumber = "";
   } else {

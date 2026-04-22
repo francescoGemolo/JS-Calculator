@@ -171,7 +171,7 @@ body {
 }
 
 #result {
-    font-size: 2rem;
+    font-size: 2.375rem;
     color: var(--text);
     opacity: 0.6;
 }
