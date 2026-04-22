@@ -76,14 +76,14 @@ body {
 }
 
 .calculator {
-    width: min(28rem, 100vw);
+    width: 100%;
+    max-width: 24rem;
     display: flex;
     flex-direction: column;
     padding: 1.125rem;
     border: 1px solid var(--border);
     border-radius: 3rem;
     background: var(--surface);
-    overflow: hidden;
 }
 
 .calculator-header {
