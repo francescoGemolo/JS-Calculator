@@ -86,7 +86,6 @@ function evaluate() {
     resultDiv.textContent = solution;
     firstNumber = "";
   } else {
-    // Round decimals (Assignment step f.c)
     firstNumber = Math.round(solution * 1000) / 1000;
     resultDiv.textContent = firstNumber;
   }
