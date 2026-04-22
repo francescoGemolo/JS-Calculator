@@ -167,3 +167,28 @@ function decimal(value) {
 }
 
 inputBox.addEventListener("click", buttonClick);
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if (key >= "0" && key <= "9")
+    buttonClick({ target: { dataset: { action: "number", value: key } } });
+  else if (key === "+")
+    buttonClick({ target: { dataset: { action: "addition", value: "+" } } });
+  else if (key === "-")
+    buttonClick({ target: { dataset: { action: "subtraction", value: "-" } } });
+  else if (key === "*")
+    buttonClick({
+      target: { dataset: { action: "multiplication", value: "*" } },
+    });
+  else if (key === "/")
+    buttonClick({ target: { dataset: { action: "division", value: "/" } } });
+  else if (key === "." || key === ",")
+    buttonClick({ target: { dataset: { action: "decimal", value: "." } } });
+  else if (key === "Enter" || key === "=")
+    buttonClick({ target: { dataset: { action: "submit", value: "=" } } });
+  else if (key === "Backspace")
+    buttonClick({ target: { dataset: { action: "backspace" } } });
+  else if (key === "Escape")
+    buttonClick({ target: { dataset: { action: "clear" } } });
+});
