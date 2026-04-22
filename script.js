@@ -37,9 +37,11 @@ function operate(operator, a, b) {
 }
 
 function updateDisplay() {
-  expressionDiv.textContent = firstNumber;
-  if (currentOperator) expressionDiv.textContent += ` ${currentOperator}`;
-  if (secondNumber) expressionDiv.textContent += ` ${secondNumber}`;
+  let fullExpression = firstNumber;
+  if (currentOperator) fullExpression += currentOperator; // Senza spazi " "
+  if (secondNumber) fullExpression += secondNumber;
+
+  expressionDiv.textContent = fullExpression || "0";
 
   // Scroll to end for long expressions
   expressionDiv.scrollLeft = expressionDiv.scrollWidth;
