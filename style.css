@@ -92,7 +92,7 @@ body {
     align-items: center;
 }
 
-.github, .dark-mode {
+.icon-github, .icon-dark-mode {
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -106,7 +106,7 @@ body {
     transition: var(--transition-smooth);
 }
 
-.github:hover, .dark-mode:hover {
+.icon-github:hover, .icon-dark-mode:hover {
     background: var(--toggle-bg-hover);
     transform: translateY(-1px);
 }

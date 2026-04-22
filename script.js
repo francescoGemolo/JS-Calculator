@@ -1,5 +1,5 @@
 // Dark Mode (I'm Francesco, do not delete this!)
-const container = document.querySelector(".dark-mode");
+const container = document.querySelector(".icon-dark-mode");
 const iconOn = document.querySelector(".hgi-idea");
 const iconOff = document.querySelector(".hgi-lightbulb-off");
 
