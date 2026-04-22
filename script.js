@@ -55,13 +55,36 @@ function buttonClick(event) {
     case "mod":
       percentage();
       break;
+    case "decimal":
+      decimal(value);
+      break;
   }
 
   updateDisplay(expression, result);
 }
 
 function addValue(value) {
-  expression += value;
+  if (value === ".") {
+    const lastOperatorIndex = expression.search(/[+\-*/]/);
+    const lastDecimalIndex = expression.lastIndexOf(".");
+    const lastNumberIndex = Math.max(
+      expression.lastIndexOf("+"),
+      expression.lastIndexOf("-"),
+      expression.lastIndexOf("*"),
+      expression.lastIndexOf("/"),
+    );
+    if (
+      (lastDecimalIndex < lastOperatorIndex ||
+        lastDecimalIndex < lastNumberIndex ||
+        lastDecimalIndex === -1) &&
+      (expression == "" ||
+        expression.slice(lastNumberIndex + 1).indexOf("-") === -1)
+    ) {
+      expression += value;
+    }
+  } else {
+    expression += value;
+  }
 }
 
 function updateDisplay(expression, result) {
@@ -130,6 +153,12 @@ function percentage() {
     }
   } else if (result !== "") {
     result = parseFloat(result) / 100;
+  }
+}
+
+function decimal(value) {
+  if (!expression.endsWith(".") && !isNaN(expression.slice(-1))) {
+    addValue(value);
   }
 }
 
