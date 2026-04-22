@@ -49,6 +49,9 @@ function buttonClick(event) {
     case "submit":
       submit();
       break;
+    case "negation":
+      negation();
+      break;
   }
 
   updateDisplay(expression, result);
@@ -100,6 +103,16 @@ function evaluateExpression() {
     : evalResult < 1
       ? parseFloat(evalResult.toFixed(10))
       : parseFloat(evalResult.toFixed(2));
+}
+
+function negation() {
+  if (expression === "" && result !== "") {
+    result = -result;
+  } else if (!expression.startsWith("-") && expression !== "") {
+    expression = "-" + expression;
+  } else if (expression.startsWith("-")) {
+    expression = expression.slice(1);
+  }
 }
 
 inputBox.addEventListener("click", buttonClick);
