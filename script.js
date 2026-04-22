@@ -79,6 +79,24 @@ function handleOperator(op) {
   }
 }
 
+function handleToggleSign() {
+  if (secondNumber) {
+    secondNumber = (parseFloat(secondNumber) * -1).toString();
+  } else if (firstNumber) {
+    firstNumber = (parseFloat(firstNumber) * -1).toString();
+  }
+  updateDisplay();
+}
+
+function handlePercent() {
+  if (secondNumber) {
+    secondNumber = (parseFloat(secondNumber) / 100).toString();
+  } else if (firstNumber) {
+    firstNumber = (parseFloat(firstNumber) / 100).toString();
+  }
+  updateDisplay();
+}
+
 const snarkyMessages = [
   "Nice try, Einstein",
   "Black hole alert!",
