@@ -22,7 +22,7 @@ const inputBox = document.getElementById("input");
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => (b === 0 ? "Nice try, Einstein" : a / b);
+const divide = (a, b) => (b === 0 ? "Really?" : a / b);
 
 function operate(operator, a, b) {
   a = Number(a);
@@ -79,29 +79,40 @@ function handleOperator(op) {
   }
 }
 
+const snarkyMessages = [
+  "Nice try, Einstein",
+  "Black hole alert!",
+  "To infinity... or not"
+];
+
 function evaluate() {
   if (!firstNumber || !currentOperator || !secondNumber) return;
 
   const solution = operate(currentOperator, firstNumber, secondNumber);
 
-  if (solution === "Nice try, Einstein") {
-    resultDiv.textContent = solution;
-    firstNumber = "";
-  } else {
-    firstNumber = Math.round(solution * 1000) / 1000;
-    resultDiv.textContent = firstNumber;
-  }
+  if (solution === "Really?") {
+    const randomMsg = snarkyMessages[Math.floor(Math.random() * snarkyMessages.length)];
+    resultDiv.textContent = randomMsg;
 
-  secondNumber = "";
-  currentOperator = null;
-  shouldResetDisplay = true;
-  updateDisplay();
+    firstNumber = "";
+    currentOperator = null;
+    secondNumber = "";
+    expressionDiv.textContent = "0";
+  } else {
+    firstNumber = (Math.round(solution * 1000) / 1000).toString();
+    resultDiv.textContent = firstNumber;
+    secondNumber = "";
+    currentOperator = null;
+    shouldResetDisplay = true;
+    updateDisplay();
+  }
 }
 
 function handleDecimal() {
   if (shouldResetDisplay) {
     firstNumber = "0.";
     shouldResetDisplay = false;
+    updateDisplay();
     return;
   }
   // Multiple decimals
@@ -133,7 +144,7 @@ inputBox.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key >= 0 && e.key <= 9) handleNumber(e.key);
+  if (e.key >= "0" && e.key <= "9") handleNumber(e.key);
   if (["+", "-", "*", "/"].includes(e.key)) handleOperator(e.key);
   if (e.key === "Enter" || e.key === "=") evaluate();
   if (e.key === "Backspace") backspace();

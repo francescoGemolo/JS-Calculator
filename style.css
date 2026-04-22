@@ -41,7 +41,6 @@
 
     /* Animation */
     --transition:
-        background 0.25s ease,
         transform 0.20s cubic-bezier(0.2, 0.8, 0.2, 1),
         box-shadow 0.25s ease;
 }
@@ -86,7 +85,6 @@ body {
     min-height: 100vh;
     background: var(--bg);
     color: var(--text);
-    transition: background 0.3s ease;
 }
 
 .calculator {
