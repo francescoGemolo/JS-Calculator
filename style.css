@@ -120,32 +120,6 @@ body {
     color: var(--text);
 }
 
-.authors-header {
-    position: absolute;
-    top: 1rem;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-    box-sizing: border-box;
-}
-
-#author-left {
-    margin: 0;
-    width: fit-content;
-}
-
-#author-right {
-    margin: 0;
-    width: fit-content;
-    text-align: right;
-}
-
-p span {
-    text-decoration: underline;
-}
-
 .calculator {
     width: min(28rem, 100vw);
     display: flex;
