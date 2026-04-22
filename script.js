@@ -52,6 +52,9 @@ function buttonClick(event) {
     case "negation":
       negation();
       break;
+    case "mod":
+      percentage();
+      break;
   }
 
   updateDisplay(expression, result);
@@ -112,6 +115,21 @@ function negation() {
     expression = "-" + expression;
   } else if (expression.startsWith("-")) {
     expression = expression.slice(1);
+  }
+}
+
+function percentage() {
+  if (expression !== "") {
+    result = evaluateExpression();
+    expression = "";
+
+    if (!isNaN(result) && isFinite(result)) {
+      result /= 100;
+    } else {
+      result = "";
+    }
+  } else if (result !== "") {
+    result = parseFloat(result) / 100;
   }
 }
 
