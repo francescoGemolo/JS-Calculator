@@ -1,6 +1,5 @@
 # JavaScript Calculator
 
-## Preview
 [Live Demo](https://francescogemolo.github.io/JS-Calculator/)
 
 ## Overview
