@@ -1,4 +1,4 @@
-// Dark Mode (I'm Francesco, do not delete this!)
+// Dark Mode (I'm Francesco, don't delete this!)
 const container = document.querySelector(".icon-dark-mode");
 const iconOn = document.querySelector(".hgi-idea");
 const iconOff = document.querySelector(".hgi-lightbulb-off");
@@ -67,9 +67,26 @@ function handleNumber(num) {
   updateDisplay();
 }
 
+function showSnarkyError() {
+  const randomMsg = snarkyMessages[Math.floor(Math.random() * snarkyMessages.length)];
+  resultDiv.textContent = randomMsg;
+  firstNumber = "";
+  currentOperator = null;
+  secondNumber = "";
+  expressionDiv.textContent = "0";
+}
+
 function handleOperator(op) {
-  if (firstNumber && currentOperator && secondNumber) {
-    evaluate();
+  if (firstNumber !== "" && currentOperator !== null && secondNumber !== "") {
+    const solution = operate(currentOperator, firstNumber, secondNumber);
+
+    if (solution === "Really?") {
+      showSnarkyError();
+      return;
+    }
+
+    firstNumber = (Math.round(solution * 1000) / 1000).toString();
+    secondNumber = "";
   }
 
   if (firstNumber !== "") {
@@ -98,27 +115,23 @@ function handlePercent() {
 }
 
 const snarkyMessages = [
-  "Nice try, Einstein",
+  "Nice try, Einstein!",
   "Black hole alert!",
-  "To infinity... or not"
+  "To infinity... or not :)"
 ];
 
 function evaluate() {
-  if (!firstNumber || !currentOperator || !secondNumber) return;
+  if (firstNumber === "" || currentOperator === null || secondNumber === "") return;
 
   const solution = operate(currentOperator, firstNumber, secondNumber);
 
   if (solution === "Really?") {
-    const randomMsg = snarkyMessages[Math.floor(Math.random() * snarkyMessages.length)];
-    resultDiv.textContent = randomMsg;
-
-    firstNumber = "";
-    currentOperator = null;
-    secondNumber = "";
-    expressionDiv.textContent = "0";
+    showSnarkyError();
   } else {
-    firstNumber = (Math.round(solution * 1000) / 1000).toString();
-    resultDiv.textContent = firstNumber;
+    const finalResult = (Math.round(solution * 1000) / 1000).toString();
+    resultDiv.textContent = finalResult;
+
+    firstNumber = finalResult;
     secondNumber = "";
     currentOperator = null;
     shouldResetDisplay = true;

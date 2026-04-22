@@ -126,7 +126,7 @@ body {
     justify-content: center;
     align-items: flex-end;
     height: 9rem;
-    padding: 1.5rem;
+    padding: 1.125rem;
     background: var(--display);
     border: 1px solid var(--border);
     border-radius: 1.5rem;
@@ -155,10 +155,10 @@ body {
 }
 
 #result {
-    font-size: 2.375rem;
+    font-size: 2rem;
     color: var(--text);
     opacity: 0.6;
-    margin-top: 0.25rem;
+    margin-top: 0.125rem;
 }
 
 #input {
