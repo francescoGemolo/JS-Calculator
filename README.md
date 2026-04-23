@@ -26,11 +26,6 @@ A stylish, responsive calculator webapp built with vanilla HTML, CSS, and JavaSc
 - Responsive design
 - Keyboard support (optional)
 
-## Tech Stack
-- HTML5
-- CSS3 (CSS Variables, Flexbox/Grid)
-- Vanilla JavaScript (ES6+)
-
 ## Team
 - [Francesco](https://github.com/francescoGemolo)
 - [Daniele](https://github.com/DanieleLG90)
