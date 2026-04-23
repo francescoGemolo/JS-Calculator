@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Calculator | Team Project</title>
-
     <meta name="description"
         content="A collaborative JavaScript calculator project featuring a sleek UI, dark mode toggle, and responsive design. Built as a team to practice DOM manipulation and arithmetic logic.">
+    <meta name="author" content="Daniele, Francesco, Paula">
+
+    <title>Calculator | Team Project</title>
 
     <meta property="og:title" content="JS Calculator | Team Project">
     <meta property="og:description" content="A clean and functional calculator with Dark Mode. Built by our team.">
@@ -29,49 +29,51 @@
 
 <body>
     <main class="calculator">
-        <header class="calculator-header">
+        <div class="calculator-header" role="toolbar" aria-label="Calculator controls">
             <div class="icon-dark-mode">
                 <i class="hgi hgi-stroke hgi-rounded hgi-idea"></i>
                 <i class="hgi hgi-stroke hgi-rounded hgi-lightbulb-off hidden"></i>
             </div>
 
             <div class="icon-github">
-                <a href="https://github.com/francescoGemolo/JS-Calculator" target="_blank" rel="noopener noreferrer">
-                    <i class="hgi hgi-stroke hgi-rounded hgi-github"></i>
+                <a href="https://github.com/francescoGemolo/JS-Calculator" target="_blank" rel="noopener noreferrer"
+                    aria-label="View source on GitHub">
+                    <i class="hgi hgi-stroke hgi-rounded hgi-github" aria-hidden="true"></i>
                 </a>
             </div>
-        </header>
+        </div>
 
-        <section id="output">
+        <section id="output" aria-label="Calculator display" aria-live="polite">
             <div id="expression"></div>
             <div id="result"></div>
         </section>
 
-        <section id="input">
+        <section id="input" aria-label="Calculator keypad">
             <button class="btn light" data-action="clear">C</button>
             <button class="btn light" data-action="toggle-sign">+/-</button>
             <button class="btn light" data-action="percent">%</button>
-            <button class="btn primary" data-action="division" data-value="/">/</button>
+            <button class="btn primary" data-action="division" data-value="/" aria-label="Divide">/</button>
 
             <button class="btn dark" data-action="number" data-value="7">7</button>
             <button class="btn dark" data-action="number" data-value="8">8</button>
             <button class="btn dark" data-action="number" data-value="9">9</button>
-            <button class="btn primary" data-action="multiplication" data-value="*">&times;</button>
+            <button class="btn primary" data-action="multiplication" data-value="*"
+                aria-label="Multiply">&times;</button>
 
             <button class="btn dark" data-action="number" data-value="4">4</button>
             <button class="btn dark" data-action="number" data-value="5">5</button>
             <button class="btn dark" data-action="number" data-value="6">6</button>
-            <button class="btn primary" data-action="subtraction" data-value="-">-</button>
+            <button class="btn primary" data-action="subtraction" data-value="-" aria-label="Subtract">-</button>
 
             <button class="btn dark" data-action="number" data-value="1">1</button>
             <button class="btn dark" data-action="number" data-value="2">2</button>
             <button class="btn dark" data-action="number" data-value="3">3</button>
-            <button class="btn primary" data-action="addition" data-value="+">+</button>
+            <button class="btn primary" data-action="addition" data-value="+" aria-label="Add">+</button>
 
-            <button class="btn dark" data-action="decimal" data-value=".">.</button>
+            <button class="btn dark" data-action="decimal" data-value="." aria-label="Decimal point">.</button>
             <button class="btn dark" data-action="number" data-value="0">0</button>
-            <button class="btn dark" data-action="backspace">&#9003;</button>
-            <button class="btn primary" data-action="submit">=</button>
+            <button class="btn dark" data-action="backspace" aria-label="Backspace">&#9003;</button>
+            <button class="btn primary" data-action="submit" aria-label="Equals">=</button>
         </section>
     </main>
 
