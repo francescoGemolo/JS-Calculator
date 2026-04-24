@@ -9,7 +9,7 @@ A stylish, responsive calculator webapp built with vanilla HTML, CSS, and JavaSc
 
 ### HTML Structure
 - **Display area**: Two divs showing the current expression and the result
-- **Button grid**: A 4x4 layout of calculator buttons (numbers 0-9, operators, and function keys)
+- **Button layout**: A 4x4 layout of calculator buttons (numbers 0-9, operators, and function keys)
 - Each button uses `data-action` and `data-value` attributes for easy JavaScript handling
 
 ### JavaScript Logic
