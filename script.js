@@ -9,7 +9,6 @@ container.addEventListener("click", () => {
   iconOff.classList.toggle("hidden");
 });
 
-// Calculator
 let firstNumber = "";
 let secondNumber = "";
 let currentOperator = null;
