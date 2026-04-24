@@ -43,7 +43,6 @@ function updateDisplay() {
 
   expressionDiv.textContent = fullExpression || "0";
 
-  // Scroll to end for long expressions
   expressionDiv.scrollLeft = expressionDiv.scrollWidth;
 }
 
@@ -146,7 +145,7 @@ function handleDecimal() {
     updateDisplay();
     return;
   }
-  // Multiple decimals
+
   if (!currentOperator && !firstNumber.includes(".")) firstNumber += ".";
   else if (currentOperator && !secondNumber.includes(".")) secondNumber += ".";
   updateDisplay();
