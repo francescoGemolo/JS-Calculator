@@ -5,29 +5,24 @@
 }
 
 :root {
-    /* Colors */
     --bg: #090909;
     --surface: #161616;
     --display: #242424;
     --text: #f8f8f8;
     --border: #ffffff20;
 
-    /* Buttons */
     --light: #525252;
     --dark: #262626;
     --primary: #f97316;
     --primary-text: #fafafa;
 
-    /* Icons */
     --toggle-bg: #171717;
     --toggle-bg-hover: #262626;
     --toggle-icon: #fafafa;
 
-    /* Shadows */
     --shadow-s: inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
     --shadow-m: inset 0 1px 2px #ffffff50, 0 2px 4px #00000030, 0 4px 8px #00000015;
 
-    /* Animations */
     --transition-fast: transform 0.1s ease-out;
     --transition-smooth: background 0.2s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
 
