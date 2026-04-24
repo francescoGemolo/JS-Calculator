@@ -1,6 +1,6 @@
 # JavaScript Calculator
 
-[Live Demo](https://francescogemolo.github.io/JS-Calculator/)
+[Preview Link](https://francescogemolo.github.io/JS-Calculator/)
 
 ## Overview
 A stylish, responsive calculator webapp built with vanilla HTML, CSS, and JavaScript. Features include basic arithmetic operations, dark/light mode toggle, and a modern clean interface.
