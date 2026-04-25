@@ -71,6 +71,7 @@ function showSnarkyError() {
   firstNumber = "0";
   secondNumber = "";
   currentOperator = null;
+  shouldResetDisplay = true;
   updateDisplay();
 }
 
