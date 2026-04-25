@@ -68,10 +68,10 @@ function handleNumber(num) {
 function showSnarkyError() {
   const randomMsg = snarkyMessages[Math.floor(Math.random() * snarkyMessages.length)];
   resultDiv.textContent = randomMsg;
-  firstNumber = "";
-  currentOperator = null;
+  firstNumber = "0";
   secondNumber = "";
-  expressionDiv.textContent = "0";
+  currentOperator = null;
+  updateDisplay();
 }
 
 function handleOperator(op) {
