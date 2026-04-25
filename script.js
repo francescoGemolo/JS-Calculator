@@ -1,4 +1,4 @@
-// Dark Mode (I'm Francesco, don't delete this!)
+// Dark Mode (I'm Francesco, don't touch this!)
 const container = document.querySelector(".icon-dark-mode");
 const iconOn = document.querySelector(".hgi-idea");
 const iconOff = document.querySelector(".hgi-lightbulb-off");
@@ -37,7 +37,7 @@ function operate(operator, a, b) {
 
 function updateDisplay() {
   let fullExpression = firstNumber;
-  if (currentOperator) fullExpression += currentOperator; // Senza spazi " "
+  if (currentOperator) fullExpression += currentOperator;
   if (secondNumber) fullExpression += secondNumber;
 
   expressionDiv.textContent = fullExpression || "0";
